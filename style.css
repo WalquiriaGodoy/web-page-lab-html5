@@ -41,6 +41,16 @@ nav a:hover {
 	text-decoration: underline;
 }
 
+p {
+	text-align: justify;
+	line-height: normal;
+}
+
+#missao {
+	text-align: center;
+	line-height: 1em;
+}
+
 .produtos {
 	width: 940px;
 	margin: 0 auto;
@@ -177,7 +187,7 @@ td, th {
 }
 
 .principal p {
-	margin: 0 0 1em;
+	margin: 0 0 2em;
 }
 
 .principal strong {
