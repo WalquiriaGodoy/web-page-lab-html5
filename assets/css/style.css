@@ -99,14 +99,20 @@ p {
 
 footer {
 	text-align: center;
-	background: url("bg.jpg");
-	padding: 40px 0;
+	background: #5f5b5b;
+	padding: 20px 0 10px 0;
+}
+
+.rodape-logo {
+	width: 190px;
+	height: 190px;
+	text-align: center;
 }
 
 .copyright {
-	color: #FFFFFF;
+	color: #000000;
 	font-size: 13px;
-	margin: 20px 0 0;
+	text-align: center;
 }
 
 main {
@@ -250,14 +256,14 @@ td, th {
 
 .imagem-beneficios {
 	width: 50%;
-	opacity: 0.6;
+	opacity: 1;
 	transition: 400ms;
 	box-shadow: 10px 10px 10px 0 #000000;
     position: relative;
 }
 
 .imagem-beneficios:hover {
-	opacity: 1;
+	opacity: 0.6;
 }
 
 .video {
