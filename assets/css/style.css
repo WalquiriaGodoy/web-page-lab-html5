@@ -41,7 +41,7 @@ nav a:hover {
 	text-decoration: underline;
 }
 
-p {
+.principal p {
 	text-align: justify;
 	line-height: normal;
 }
@@ -53,15 +53,23 @@ p {
 }
 
 .produtos {
-	width: 940px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	height: 480px;
 	margin: 0 auto;
-	padding: 50px 0;
+	padding: 40px 40px;
 }
 
 .produtos li {
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 	text-align: center;
-	width: 30%;
+	width: 25%;
+	height: 100%;
 	vertical-align: top;
 	margin: 0 1.5%;
 	padding: 30px 20px;
@@ -79,7 +87,7 @@ p {
 }
 
 .produtos li:hover h2 {
-	font-size: 34px;
+	font-size: 32px;
 }
 
 .produtos h2 {
@@ -87,8 +95,13 @@ p {
 	font-weight: bold;
 }
 
-.produto-descricao {
+.produtos p {
+	margin-bottom: 0.5rem;
+}
+
+.produto-descricao p {
 	font-size: 18px;
+	text-align: center;
 }
 
 .produto-preco {
@@ -177,6 +190,7 @@ td, th {
 /* css da página inicial */
 .banner {
 	width:100%;
+	height: auto;
 }
 
 .titulo-principal {
