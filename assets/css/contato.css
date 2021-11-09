@@ -1,0 +1,13 @@
+.dados {
+    text-align: left;
+    padding: 50px;
+}
+
+.input-padrao {
+    width: 70%;
+}
+
+.horarios {
+    display: flex;
+    justify-content: center;
+}   
