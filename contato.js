@@ -2,7 +2,13 @@ const criarFieldset = (evento) => {
     evento.preventDefault()
 
     const fieldset = document.querySelector('[data-fieldset]')
-    console.log(fieldset)
+
+    const novaLegend = document.createElement('legend')
+    const subtitulo = 'Selecione a Turma'
+    novaLegend.classList.add('subtitulo')
+
+    novaLegend.innerHTML = subtitulo
+    fieldset.appendChild(novaLegend)
 
     const novaLabel1 = document.createElement('label')
     const novaLabel2 = document.createElement('label')
@@ -12,15 +18,8 @@ const criarFieldset = (evento) => {
     novaLabel1.innerHTML = opcaoQuinta 
     novaLabel2.innerHTML = opcaoSabado
 
-    novaLabel1.appendChild = opcaoQuinta 
-    novaLabel2.appendChild = opcaoSabado
-    console.log(novaLabel1)
-    console.log(novaLabel2)
-
     fieldset.appendChild(novaLabel1) 
     fieldset.appendChild(novaLabel2)
-   // fieldset.appendChild = opcaoSabado
-
 }
 
 const selecionaForro = document.querySelector('[data-select-forro]')
