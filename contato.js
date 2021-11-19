@@ -1,31 +1,10 @@
-const criarFieldset = (evento) => {
-    evento.preventDefault()
-
-    const fieldset = document.querySelector('[data-fieldset]')
-
-    const novaLegend = document.createElement('legend')
-    const subtitulo = 'Selecione a Turma'
-    novaLegend.classList.add('subtitulo')
-
-    novaLegend.innerHTML = subtitulo
-    fieldset.appendChild(novaLegend)
-
-    const novaLabel1 = document.createElement('label')
-    const novaLabel2 = document.createElement('label')
-    const opcaoQuinta = '<input type="radio" name="turma" value="quinta" id="radio-quinta">Quinta-feira - 20h'
-    const opcaoSabado = '<input type="radio" name="turma" value="sabado" id="radio-sabado">Sábado - 18h'
-    
-    novaLabel1.innerHTML = opcaoQuinta 
-    novaLabel2.innerHTML = opcaoSabado
-
-    fieldset.appendChild(novaLabel1) 
-    fieldset.appendChild(novaLabel2)
-}
+import turmasForro from "./componentes/turmasForro.js"
+import turmasSamba from "./componentes/turmasSamba.js"
 
 const selecionaForro = document.querySelector('[data-select-forro]')
-selecionaForro.addEventListener('click', criarFieldset)
+selecionaForro.addEventListener('click', turmasForro)
 
 const selecionaSamba = document.querySelector('[data-select-samba]')
-selecionaSamba.addEventListener('click', criarFieldset)
+selecionaSamba.addEventListener('click', turmasSamba)
 
 
