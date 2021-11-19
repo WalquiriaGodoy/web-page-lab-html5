@@ -150,8 +150,8 @@ form label, form legend {
 }
 
 .enviar {
-	width:40%;
-	padding: 15px 0;
+	width:30%;
+	padding: 10px 0;
 	background: orange;
 	color: white;
 	font-weight: bold;
@@ -164,7 +164,7 @@ form label, form legend {
 
 .enviar:hover {
 	background: darkorange;
-	transform: scale(1.2);
+	transform: scale(1.1);
 }
 
 table {
