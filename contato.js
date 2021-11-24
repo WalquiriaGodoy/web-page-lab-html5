@@ -8,5 +8,5 @@ selecionaForro.addEventListener('click', turmasForro)
 const selecionaSamba = document.querySelector('[data-select-samba]')
 selecionaSamba.addEventListener('click', turmasSamba)
 
-const button = document.querySelector('[data-button]')
-button.addEventListener('click', formularioEnviado)
+const form = document.querySelector('form')
+form.addEventListener('submit', formularioEnviado)
