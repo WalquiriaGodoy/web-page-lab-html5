@@ -1,6 +1,21 @@
+.dados-pessoais {
+    text-align: inherit;
+    padding: 0 0 2rem 6rem;
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+}
+
+.subtitulo {
+    text-align: inherit;
+    padding: 0.8rem 0 0.8rem 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+
 .dados {
     text-align: left;
-    padding: 50px;
+    padding: 0 0 0 50px;
 }
 
 .input-padrao {
