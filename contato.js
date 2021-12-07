@@ -10,3 +10,17 @@ selecionaSamba.addEventListener('click', turmasSamba)
 
 const form = document.querySelector('form')
 form.addEventListener('submit', formularioEnviado)
+
+// Adiciona conteúdo do localStorage no input
+
+const nomeLocalStorage = localStorage.getItem('nome')
+const inputNome = document.querySelector('[data-tipo="nome"]')
+inputNome.value = nomeLocalStorage
+
+// Salva conteúdo do input no localStorage
+
+inputNome.addEventListener('blur', (evento) =>{
+    const nome = inputNome.value 
+    localStorage.setItem('nome', nome)
+})
+
