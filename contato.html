@@ -23,73 +23,75 @@
             </div>
         </header>
 
-    <main>
-        <form>
-            <fieldset class="dados">
-                <h1 class="dados-pessoais">Dados Pessoais</h1>
+        <main>
+            <form>
+                <fieldset class="dados-pessoais">
+                    <h1 class="titulo">Dados Pessoais</h1>
 
-                <label for="nomesobrenome">Nome e Sobrenome</label>
-                <input type="text" id="nomesobrenome" class="input-padrao" data-tipo="nome" required>
+                    <label for="nomesobrenome">Nome e Sobrenome</label>
+                    <input type="text" id="nomesobrenome" class="input-padrao" data-tipo="nome" required>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" class="input-padrao" placeholder="seuemail@dominio.com" data-tipo="email" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="input-padrao" placeholder="seuemail@dominio.com" data-tipo="email" required>
 
-                <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" class="input-padrao" required placeholder="(xx) xxxxx-xxxx" data-tipo="telefone" required>
-        
-                <label for="datadenascimento">Data de Nascimento</label>
-                <input type="number" id="datadenascimento" class="input-padrao" required placeholder="dd/mm/aaaa" data-tipo="nascimento" required>
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" class="input-padrao" required placeholder="(xx) xxxxx-xxxx" data-tipo="telefone" required>
                 
-                <h1 class="dados-pessoais">Endereço</h1>
+                    <label for="datadenascimento">Data de Nascimento</label>
+                    <input type="number" id="datadenascimento" class="input-padrao" required placeholder="dd/mm/aaaa" data-tipo="nascimento" required>
+                </fieldset>
 
-                <label for="cep">CEP</label>
-                <input name="cep" id="cep" class="input-padrao" type="text" pattern="[\d]{5}-?[\d]{3}" data-tipo="cep" required>
-                <span class="input-mensagem-erro">Este campo não está válido</span>
+                <fieldset class="dados-endereco" data-form-endereco>
+                    <h1 class="titulo">Endereço</h1>
 
-                <label class="input-label" for="logradouro">Logradouro</label>
-                <input name="logradouro" id="logradouro" class="input-padrao" type="text" data-tipo="logradouro" required>
-                <span class="input-mensagem-erro">Este campo não está válido</span>
+                    <label for="cep">CEP</label>
+                    <input name="cep" id="cep" class="input-padrao" type="text" pattern="[\d]{5}-?[\d]{3}" data-tipo="cep" required>
+                    <span class="input-mensagem-erro">Este campo não está válido</span>
 
-                <label class="input-label" for="cidade">Cidade</label>
-                <input name="cidade" id="cidade" class="input-padrao" type="text" data-tipo="cidade" required>
-                <span class="input-mensagem-erro">Este campo não está válido</span>
-              
+                    <label class="input-label" for="logradouro">Logradouro</label>
+                    <input name="logradouro" id="logradouro" class="input-padrao" type="text" data-tipo="logradouro" required>
+                    <span class="input-mensagem-erro">Este campo não está válido</span>
+
+                    <label class="input-label" for="cidade">Cidade</label>
+                    <input name="cidade" id="cidade" class="input-padrao" type="text" data-tipo="cidade" required>
+                    <span class="input-mensagem-erro">Este campo não está válido</span>
                 
-                <label class="input-label" for="estado">Estado</label>
-                <input name="estado" id="estado" class="input-padrao" type="text" data-tipo="estado" required>
-                <span class="input-mensagem-erro">Este campo não está válido</span>
 
-            </fieldset>
+                    <label class="input-label" for="estado">Estado</label>
+                    <input name="estado" id="estado" class="input-padrao" type="text" data-tipo="estado" required>
+                    <span class="input-mensagem-erro">Este campo não está válido</span>
 
-            <fieldset>
-                <legend class="subtitulo">Selecione o Curso</legend>
-                <label for="checkbox-forro"><input type="checkbox" name="curso" value="forro" id="checkbox-forro" data-select-forro >Forró</label>
-                <label for="checkbox-samba"><input type="checkbox" name="curso" value="samba" id="checkbox-samba" data-select-samba >Samba de Gafieira</label> 
-            </fieldset>
+                </fieldset>
 
-            <fieldset data-fieldset>
-            </fieldset>
+                <fieldset>
+                    <legend class="subtitulo">Selecione o Curso</legend>
+                    <label for="checkbox-forro"><input type="checkbox" name="curso" value="forro" id="checkbox-forro" data-select-forro >Forró</label>
+                    <label for="checkbox-samba"><input type="checkbox" name="curso" value="samba" id="checkbox-samba" data-select-samba >Samba de Gafieira</label> 
+                </fieldset>
 
-            <fieldset>
-                <legend class="subtitulo">Como prefere receber o nosso contato?</legend>
-                <label for="radio-email"><input type="radio" name="contato" value="email" id="radio-email">Email</label>
-                <label for="radio-telefone"><input type="radio" name="contato" value="telefone" id="radio-telefone">Telefone</label>
-                <label for="radio-whatsapp"><input type="radio" name="contato" value="Whatsapp" id="radio-whatsapp">Whatsapp</label>    
-            </fieldset>
-            
-            <label class="checkbox"><input type="checkbox" checked> Gostaria de receber novidades por email</label>
-            
-            <fieldset data-end-form>
-                <input type="submit" value="Enviar formulário" class="enviar" data-button>
-            </fieldset> 
-             </div>
-        </form>
-    </main>
+                <fieldset data-fieldset>
+                </fieldset>
 
-    <footer>
-        <img class="rodape-logo" src="./assets/imagens/logolab2.png">
-        <p class="copyright">&copy; Copyright Laboratório de Forró - 2021</p>
-    </footer>
-    <script type="module" src="contato.js"></script>
+                <fieldset>
+                    <legend class="subtitulo">Como prefere receber o nosso contato?</legend>
+                    <label for="radio-email"><input type="radio" name="contato" value="email" id="radio-email">Email</label>
+                    <label for="radio-telefone"><input type="radio" name="contato" value="telefone" id="radio-telefone">Telefone</label>
+                    <label for="radio-whatsapp"><input type="radio" name="contato" value="Whatsapp" id="radio-whatsapp">Whatsapp</label>    
+                </fieldset>
+
+                <label class="checkbox"><input type="checkbox" checked> Gostaria de receber novidades por email</label>
+
+                <fieldset data-end-form>
+                    <input type="submit" value="Enviar formulário" class="enviar" data-button>
+                </fieldset> 
+            </form>
+        </main>
+
+        <footer>
+            <img class="rodape-logo" src="./assets/imagens/logolab2.png">
+            <p class="copyright">&copy; Copyright Laboratório de Forró - 2021</p>
+        </footer>
+
+        <script type="module" src="contato.js"></script>
     </body>
 </html>

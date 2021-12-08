@@ -1,19 +1,30 @@
 import turmasForro from "./componentes/turmasForro.js"
 import turmasSamba from "./componentes/turmasSamba.js"
 import formularioEnviado from "./componentes/formularioEnviado.js"
+import { valida } from "./componentes/valida.js"
 
+// Validação dos dados de endereço
+const fieldsetEndereco = document.querySelector('[data-form-endereco]')
+const inputs = fieldsetEndereco.getElementsByTagName('input')
+const inputsArr = Array.prototype.slice.call(inputs) //converte um HTMLCollection em um array
+inputsArr.forEach(input => {
+    console.log(input)
+    input.addEventListener('blur', (evento) => {
+        valida(evento.target)
+    })
+});
+
+// Dinamiza parte do formulário que seleciona turmas
 const selecionaForro = document.querySelector('[data-select-forro]')
 selecionaForro.addEventListener('click', turmasForro)
-
 const selecionaSamba = document.querySelector('[data-select-samba]')
 selecionaSamba.addEventListener('click', turmasSamba)
-
 const form = document.querySelector('form')
 form.addEventListener('submit', formularioEnviado)
 
+
+// Usa armazenamento no localStorage para manter dados nos inputs
 // TODO: Refatorar ou compartimentalizar função de armazenamento localStorage
-
-
 
 
 // Adiciona conteúdo do localStorage no input nome
