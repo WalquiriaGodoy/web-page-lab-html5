@@ -26,3 +26,8 @@
     display: flex;
     justify-content: center;
 }   
+
+.input-mensagem-erro {
+    display: none;
+}
+
