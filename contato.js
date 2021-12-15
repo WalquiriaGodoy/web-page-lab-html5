@@ -3,17 +3,6 @@ import turmasSamba from "./componentes/turmasSamba.js"
 import formularioEnviado from "./componentes/formularioEnviado.js"
 import { valida } from "./componentes/valida.js"
 
-// Validação dos dados de endereço
-const fieldsetEndereco = document.querySelector('[data-form-endereco]')
-const inputs = fieldsetEndereco.getElementsByTagName('input')
-const inputsArr = Array.prototype.slice.call(inputs) //converte um HTMLCollection em um array
-inputsArr.forEach(input => {
-    console.log(input)
-    input.addEventListener('blur', (evento) => {
-        valida(evento.target)
-    })
-});
-
 // Dinamiza parte do formulário que seleciona turmas
 const selecionaForro = document.querySelector('[data-select-forro]')
 selecionaForro.addEventListener('click', turmasForro)
@@ -56,10 +45,6 @@ inputEmail.addEventListener('blur', (evento) =>{
     localStorage.setItem('email', email)
 })
 
-
-
-
-
 // Adiciona conteúdo do localStorage no input telefone
 
 const telefoneLocalStorage = localStorage.getItem('telefone')
@@ -74,8 +59,6 @@ inputTelefone.addEventListener('blur', (evento) =>{
 })
 
 
-
-
 // Adiciona conteúdo do localStorage no input nascimento
 
 const nascimentoLocalStorage = localStorage.getItem('nascimento')
@@ -88,3 +71,4 @@ inputNascimento.addEventListener('blur', (evento) =>{
     const nascimento = inputNascimento.value 
     localStorage.setItem('nascimento', nascimento)
 })
+
