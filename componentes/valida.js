@@ -1,3 +1,7 @@
+//FUNÇÕES EM DESENVOLVIMENTO
+
+//import { validaDados } from "./componentes/funcoesValida.js"
+
 // Validação dos dados de endereço
 const fieldsetEndereco = document.querySelector('[data-form-endereco]')
 const inputs = fieldsetEndereco.getElementsByTagName('input')
@@ -9,6 +13,10 @@ inputsArr.forEach(input => {
     })
 });
 
+export function validaDados(input) {
+    const tipoDeInput = input.dataset.tipo
+    console.log (input, tipoDeInput)
+}
 
 const nome = document.getElementById("nomesobrenome").value
 const tipoNome = document.getElementById("nomesobrenome").nomesobrenome
@@ -19,7 +27,3 @@ const datanascimento = document.getElementById("datanascimento").value
 console.log(nome, email, telefone, datanascimento)
 
 valida(tipoNome, nome)
-
-export function valida(tipoDeInput, input){
-    console.log(tipoDeInput, input)
-}

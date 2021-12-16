@@ -1,7 +1,8 @@
 import turmasForro from "./componentes/turmasForro.js"
 import turmasSamba from "./componentes/turmasSamba.js"
 import formularioEnviado from "./componentes/formularioEnviado.js"
-import { valida } from "./componentes/valida.js"
+import { validaDados } from "./componentes/funcoesValida.js"
+
 
 // Dinamiza parte do formulário que seleciona turmas
 const selecionaForro = document.querySelector('[data-select-forro]')
@@ -25,7 +26,9 @@ inputNome.value = nomeLocalStorage
 // Salva conteúdo do input nome no localStorage
 
 inputNome.addEventListener('blur', (evento) =>{
-    const nome = inputNome.value 
+    const input = evento.target
+    const nome = input.value 
+    validaDados(input) //passa o alvo do evento para a função, ou seja, o imput.
     localStorage.setItem('nome', nome)
 })
 
