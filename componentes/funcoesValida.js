@@ -1,7 +1,7 @@
 export function validaDados(input){
-    const nome = input.value 
+    const valor = input.value 
     const tipoDeInput = input.dataset.tipo
-    console.log(tipoDeInput, nome)
+    console.log(tipoDeInput, valor)
     
     if (validadores[tipoDeInput]) {     //Se tiver essa chave no validadores
         validadores[tipoDeInput](input)  //executa a função () que está no respectivo validador
@@ -12,7 +12,7 @@ const validadores = {
     nome:input => validaNome(input),
     email:input => validaEmail(input),
     telefone: input => validaTelefone(input),
-    dataNascimento: input => validaDataNascimento(input)
+    nascimento: input => validaDataNascimento(input)
 }
 
 function validaNome() {
