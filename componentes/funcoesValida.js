@@ -8,7 +8,7 @@ export function validaDados(input){
     }
 }
 
-const validadores = {
+const validadores = {  //dicionario chave: valor => execurar função
     nome:input => validaNome(input),
     email:input => validaEmail(input),
     telefone: input => validaTelefone(input),
@@ -16,33 +16,33 @@ const validadores = {
 }
 
 function validaNome(input) {
-    console.log("entrou no valida nome")
     const tipoDeInput = input.dataset.tipo
     mostraMensagemDeErro(tipoDeInput, input)
 }
 
 function validaEmail(input) {
-    console.log("entrou no valida email")
     const tipoDeInput = input.dataset.tipo
     mostraMensagemDeErro(tipoDeInput, input)
 }
 
-function validaTelefone() {
-    console.log("entrou no valida telefone")
+function validaTelefone(input) {
+    const tipoDeInput = input.dataset.tipo
+    mostraMensagemDeErro(tipoDeInput, input)
 }
 
-function validaDataNascimento() {
-    console.log("entrou no valida data de nascimento")
+function validaDataNascimento(input) {
+    const tipoDeInput = input.dataset.tipo
+    mostraMensagemDeErro(tipoDeInput, input)
 }
 
-const tiposDeErro = [
+const tiposDeErro = [  // lista/dicionário chave: valor
     'valueMissing',
     'typeMismatch',
     'patternMismatch',
     'customError'
 ]
 
-const mensagensDeErro = {
+const mensagensDeErro = {     //dicionário chave: valor
     nome:{
         valueMissing: 'O campo nome não pode estar vazio'
     },
@@ -67,7 +67,6 @@ function mostraMensagemDeErro(tipoDeInput, input){
     let mensagem = ''
     tiposDeErro.forEach(erro =>{
         if (input.validity[erro]){    // tipo buleano, quando dá erro retorna true
-            console.log(input.validity[erro])
             mensagem = mensagensDeErro[tipoDeInput][erro]
             console.log(mensagem)
         }
