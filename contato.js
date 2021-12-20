@@ -67,3 +67,16 @@ inputNascimento.addEventListener('blur', (evento) =>{
     localStorage.setItem('nascimento', nascimento)
 })
 
+// idem para cpf
+
+const CPFLocalStorage = localStorage.getItem('CPF')
+const inputCPF = document.querySelector('[data-tipo="cpf"]')
+inputCPF.value = CPFLocalStorage
+
+inputCPF.addEventListener('blur', (evento) =>{
+    const input = evento.target
+    const CPF = inputCPF.value 
+    validaDados(input) 
+    localStorage.setItem('CPF', CPF)
+})
+

@@ -1,20 +1,20 @@
 export function validaDados(input){
     const valor = input.value 
     const tipoDeInput = input.dataset.tipo
-    console.log(tipoDeInput, valor)
+    const span = input.nextElementSibling
+    console.log(valor, tipoDeInput)
     
     if (validadores[tipoDeInput]) {     //Se tiver essa chave no validadores
         validadores[tipoDeInput](input)  //executa a função () que está no respectivo validador
     }
-    if (input.validity.valid){
-        const span = input.nextElementSibling
-        span.classList.add('input-mensagem-erro')
+    if (input.validity.valid){    //retorna true se o input for totalmente válido
+        span.classList.add('esconde-mensagem-erro')
         input.classList.remove('input-container--invalido')
         
     }else{
         input.classList.add('input-container--invalido')
-        const span = input.nextElementSibling
-        span.classList.remove('input-mensagem-erro')
+        span.classList.remove('esconde-mensagem-erro')
+        span.innerHTML = mostraMensagemDeErro(tipoDeInput, input)
     }
 }
 
@@ -22,27 +22,23 @@ const validadores = {  //dicionario chave: valor => execurar função
     nome:input => validaNome(input),
     email:input => validaEmail(input),
     telefone: input => validaTelefone(input),
-    nascimento: input => validaDataNascimento(input)
+    nascimento: input => validaDataNascimento(input),
+    cpf: input => validaCPF(input)
 }
 
 function validaNome(input) {
-    const tipoDeInput = input.dataset.tipo
-    mostraMensagemDeErro(tipoDeInput, input)
 }
 
 function validaEmail(input) {
-    const tipoDeInput = input.dataset.tipo
-    mostraMensagemDeErro(tipoDeInput, input)
 }
 
 function validaTelefone(input) {
-    const tipoDeInput = input.dataset.tipo
-    mostraMensagemDeErro(tipoDeInput, input)
 }
 
 function validaDataNascimento(input) {
-    const tipoDeInput = input.dataset.tipo
-    mostraMensagemDeErro(tipoDeInput, input)
+}
+
+function validaCPF(input){
 }
 
 const tiposDeErro = [  // lista/dicionário chave: valor
@@ -69,6 +65,11 @@ const mensagensDeErro = {     //dicionário chave: valor
 
     nascimento:{
         valueMissing: 'O campo telefone não pode estar vazio',
+        typeMismatch: 'A data de nascimento digitada não é válida'
+    },
+
+    cpf:{
+        valueMissing: 'O campo cpf não pode estar vazio',
         typeMismatch: 'A data de nascimento digitada não é válida'
     }
 }
