@@ -32,7 +32,18 @@
     justify-content: center;
 }   
 
+.input-container--invalido {
+    border-color: red;
+    border-radius: 2rem;
+}
+
 .input-mensagem-erro {
     display: none;
 }
+
+span {
+    color: red;
+}
+
+
 

@@ -6,6 +6,16 @@ export function validaDados(input){
     if (validadores[tipoDeInput]) {     //Se tiver essa chave no validadores
         validadores[tipoDeInput](input)  //executa a função () que está no respectivo validador
     }
+    if (input.validity.valid){
+        const span = input.nextElementSibling
+        span.classList.add('input-mensagem-erro')
+        input.classList.remove('input-container--invalido')
+        
+    }else{
+        input.classList.add('input-container--invalido')
+        const span = input.nextElementSibling
+        span.classList.remove('input-mensagem-erro')
+    }
 }
 
 const validadores = {  //dicionario chave: valor => execurar função
