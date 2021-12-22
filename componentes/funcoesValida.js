@@ -22,7 +22,8 @@ const validadores = {  //dicionario chave: valor => execurar função
     email:input => validaEmail(input),
     telefone: input => validaTelefone(input),
     nascimento: input => validaDataNascimento(input),
-    cpf: input => validaCPF(input)
+    cpf: input => validaCPF(input),
+    cep: input => recuperarCEP(input)
 }
 
 function validaNome(input) {
@@ -121,6 +122,44 @@ function cpfEhValido(cpf){
     return true;
 }
 
+function recuperarCEP(input) {
+    console.log("entrou na função recuperar cep")
+    const cep = input.value.replace(/\D/g,'') //substitui tudo que não é número por nada
+    const url = `https://viacep.com.br/ws/${cep}/json/`
+    const options = {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+            'content-type' : 'aplication/json;charset=utf-8'
+        }
+    }
+    if(!input.validity.patternMismatch && !input.validity.valueMissing) {
+        fetch(url,options).then(
+            response => response.json()
+        ).then(
+            data => {
+                if(data.erro) {
+                    input.setCustomValidity('Não foi possível buscar o cep.')
+                    return
+                }
+                input.setCustomValidity('')
+                preencheCamposComCEP(data)
+                return
+            }
+        )
+    }
+}
+
+function preencheCamposComCEP(data) {
+    const logradouro = document.querySelector('[data-tipo="logradouro"]')
+    const cidade = document.querySelector('[data-tipo="cidade"]')
+    const estado = document.querySelector('[data-tipo="estado"]')
+
+    logradouro.value = data.logradouro
+    cidade.value = data.localidade
+    estado.value = data.uf
+}
+
 const tiposDeErro = [  // lista/dicionário chave: valor
     'valueMissing',
     'typeMismatch',
@@ -152,6 +191,26 @@ const mensagensDeErro = {     //dicionário chave: valor
         valueMissing: 'O campo cpf não pode estar vazio',
         patternMismatch: 'Digite apenas números',
         customError: 'O cpf não é válido',
+    },
+
+    cep: {
+        valueMissing: 'O campo de CEP não pode estar vazio',
+        patternMismatch:'O CEP digitado não é válido',
+        customError: 'Não foi possível buscar o cep.'
+    },
+
+//TODO:entrar nestes erros no caso de o usuário apagar o input e colocar dados na mão
+
+    logradouro: {
+        valueMissing: 'O campo de logradouro não pode estar vazio.'
+    },
+
+    cidade: {
+        valueMissing: 'O campo da cidade não pode estar vazio.'
+    },
+
+    estado: {
+        valueMissing: 'O campo do estado não pode estar vazio.'
     }
 }
 

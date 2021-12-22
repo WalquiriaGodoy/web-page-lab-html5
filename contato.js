@@ -80,3 +80,16 @@ inputCPF.addEventListener('blur', (evento) =>{
     localStorage.setItem('CPF', CPF)
 })
 
+// idem para cep
+
+const CEPLocalStorage = localStorage.getItem('CEP')
+const inputCEP = document.querySelector('[data-tipo="cep"]')
+inputCEP.value = CEPLocalStorage
+
+inputCEP.addEventListener('blur', (evento) =>{
+    const input = evento.target
+    const CEP = inputCEP.value 
+    validaDados(input) 
+    localStorage.setItem('CEP', CEP)
+})
+
