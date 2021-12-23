@@ -9,7 +9,7 @@ const formularioEnviado = (evento) => {
     formularioEnviado.innerHTML = conteudo
     lastFieldset.appendChild(formularioEnviado)
 
-    const button = document.querySelector('[data-buton]')
+    const button = document.querySelector('[data-button]')
     button.remove()
 
 
